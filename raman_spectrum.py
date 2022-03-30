@@ -22,6 +22,7 @@ class RamanSpectrum:
         plt.legend()
         plt.xlabel('Raman shift')
         plt.ylabel('Counts')
+
     def graph_zero(self, peaks=False):
         liste = list(zip(self.raman, self.counts))
         raman = []
@@ -38,7 +39,6 @@ class RamanSpectrum:
                 plt.legend()
                 plt.xlabel('Raman shift')
                 plt.ylabel('Counts')
-
 
     def getPeaks(self):
         promi = self.promi
@@ -57,10 +57,12 @@ class RamanSpectrum:
             points_maxi.append(ens_fin[int(x)])
         return points_maxi
 
-olive = RamanSpectrum("huile_olive_100s.txt", 1800)
-olive.graph(peaks=True)
-#olive_1 = RamanSpectrum("huile_olive1.txt")
-#olive_1.graph(peaks=True)
-plt.show()
-olive.graph_zero(peaks=True)
+#olive = RamanSpectrum("huile_olive_100s.txt", 1800)
+#olive.graph(peaks=True)
+ethanol_1 = RamanSpectrum("donnees/ethanol/huile_ethanol5.TXT", 150)
+ethanol_1.graph_zero(peaks=True)
+#print(ethanol_1.getPeaks())
+isopropanol = RamanSpectrum("donnees/isopropanol7.txt", 1800)
+isopropanol.graph_zero(peaks=False)
+#print(isopropanol.getPeaks())
 plt.show()
